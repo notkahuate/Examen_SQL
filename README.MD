@@ -182,35 +182,6 @@ create table sakilacampus_pelicula_actor(
 
 
 
-1. Encuentra el cliente que ha realizado la mayor cantidad de alquileres en los últimos 6 meses.
-
-```sql
-
-Select c.id_cliente, c.nombre, count(a.id_alquiler) as cantidad alquiler
-From sakilacampus_clite c
-inner join sakilacampus_alquiler a on c.id_cliente = a.id_cliente
-group by c.id_cliente
-order by cantidad_alquileres Desc 
-```
-
-
-
-2. Lista las cinco películas más alquiladas durante el último año.
-
-   ```sql
-   Select p.id_pelicula, p.nombre, count (sa.id_alquiler ) as alquileres
-   from sakilacampus_pelicula p
-   inner join sakilacampus_inventario si on p.id_pelicula = si.id_pelicula
-   inner join sakilacampus_alquiler sa on si.id_inventario = sa.id_inventario
-   Group by P.id_pelicula
-   order by alquileres Desc
-   
-   ```
-
-   
-
-# # Funciones
-
 
 
 1. TotalIngresosCliente(ClienteID, Año): Calcula los ingresos generados por un cliente en un
